@@ -8,7 +8,7 @@ case "$OSTYPE" in
         skiarelease=Skia-Linux-Release-x86.zip
         echo "Running on Linux. Downloading Skia release: $skiarelease"
         curl -L -O https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
-        unzip ~/Downloads/$skiarelease -d ~/deps/skia
+        unzip ~/Desktop/compile-aseprite/$skiarelease -d ~/deps/skia
         ;;
     "darwin"*)
         read -p "Running on macOS. Do you want to install dependencies using Homebrew? (y/n) " answer
@@ -19,7 +19,7 @@ case "$OSTYPE" in
         skiarelease=Skia-macOS-Release-arm64.zip
         echo "Running on macOS. Downloading Skia release: $skiarelease"
         curl -L -O https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
-        unzip ~/Downloads/$skiarelease -d ~/deps/skia
+        unzip ~/compile-aseprite/$skiarelease -d ~/deps/skia
         ;;
     "cygwin")
         winget install cmake -e --id Kitware.CMake
@@ -29,8 +29,8 @@ case "$OSTYPE" in
         winget install visualstudio2022buildtools -e --id Microsoft.VisualStudio.2022.BuildTools
         skiarelease=Skia-Windows-Release-x86.zip
         echo "Running on Cygwin (Windows). Downloading Skia release: $skiarelease"
-        curl -L -O https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
-        unzip ~/Downloads/$skiarelease -d ~/deps/skia
+        wget https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
+        unzip ~/compile-aseprite/$skiarelease -d ~/deps/skia
         echo "Please ensure you have Visual Studio Build Tools installed and available in your PATH for Aseprite compilation."
         ;;
     "msys")
@@ -41,8 +41,8 @@ case "$OSTYPE" in
         winget install visualstudio2022buildtools -e --id Microsoft.VisualStudio.2022.BuildTools
         skiarelease=Skia-Windows-Release-x86.zip
         echo "Running on Msys (Windows). Downloading Skia release: $skiarelease"
-        curl -L -O https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
-        unzip ~/Downloads/$skiarelease -d ~/deps/skia
+        wget https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
+        unzip ~/compile-aseprite/$skiarelease -d ~/deps/skia
         sleep 2
         echo "Please ensure you have Visual Studio Build Tools installed and available in your PATH for Aseprite compilation."
         ;;
@@ -53,4 +53,3 @@ case "$OSTYPE" in
         exit 1
         ;;
 esac
-git submodule update --init --recursive
