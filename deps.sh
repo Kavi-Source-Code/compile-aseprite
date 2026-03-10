@@ -53,4 +53,4 @@ case "$OSTYPE" in
         exit 1
         ;;
 esac
-git update --init --recursive
+git submodule update --init --recursive
