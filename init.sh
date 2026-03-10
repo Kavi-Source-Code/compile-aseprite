@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 echo "Starting Aseprite compilation process..."
 curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 echo "Homebrew installation completed."

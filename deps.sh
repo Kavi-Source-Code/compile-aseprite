@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 echo "Setting up dependencies for Aseprite compilation..."
 sleep 1
 mkdir -p ~/deps/skia

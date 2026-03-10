@@ -1,8 +1,12 @@
-#!/bin/zsh
-if [ ! . == "$HOME/Desktop/aseprite" ]; then
-    echo "Changing directory to Desktop/aseprite..."
-    cd ~/Desktop/aseprite
+#!/bin/bash
+if [ ! . == "$HOME/Desktop" ]; then
+    echo "Changing directory to Desktop..."
+    cd ~/Desktop
 fi
+
+echo "Adding run permissions..."
+sleep 0.5
+chmod +x init.sh code.sh deps.sh compile.sh pack.sh clean.sh
 
 ./init.sh
 ./code.sh

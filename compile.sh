@@ -1,10 +1,11 @@
+#!/bin/bash
 echo "\n\nWelcome to the Aseprite compilation script!\n\n"
 SKIA_DIR="$HOME/deps/skia"
 sleep 2
 echo "Compiling Aseprite...\n\n"
 sleep 2
-mkdir build
-cd build
+mkdir aseprite/build
+cd aseprite/build
 echo "Configuring..."
 sleep 2
 read -n 1 -s -r -p "Press any key to continue..."
