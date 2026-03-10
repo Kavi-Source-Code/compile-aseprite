@@ -1,7 +1,7 @@
 #!/bin/bash
-mv bin/Aseprite.app /Applications/
-echo "Aseprite has been moved to the Applications folder."
-echo "You can now run Aseprite from the Applications folder or using Spotlight."
-echo "Cleaning up temporary files..."
-rm -rf bin
+read "Do you want to cleanup yet (y/n)?: " clean
+if [ clean ] then
+    echo "Cleaning up temporary files..."
+    rm -rf bin
+fi
 echo "Done!"

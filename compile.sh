@@ -2,6 +2,8 @@
 cd aseprite
 echo "Welcome to the Aseprite compilation script!"
 SKIA_DIR="$HOME/deps/skia"
+# Verify skia dir
+echo "Skia dir: $SKIA_DIR"
 sleep 2
 echo "Compiling Aseprite..."
 sleep 2
