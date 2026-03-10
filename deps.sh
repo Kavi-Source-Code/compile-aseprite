@@ -11,6 +11,10 @@ case "$OSTYPE" in
         unzip ~/Downloads/$skiarelease -d ~/deps/skia
         ;;
     "darwin"*)
+        read -p "Running on macOS. Do you want to install dependencies using Homebrew? (y/n) " answer
+        if [[ "$answer" != "y" ]]; then
+            xcode-select --install
+        fi
         brew install cmake ninja-build pkg-config ninja g++ gcc clang clang++
         skiarelease=Skia-macOS-Release-arm64.zip
         echo "Running on macOS. Downloading Skia release: $skiarelease"
@@ -49,3 +53,4 @@ case "$OSTYPE" in
         exit 1
         ;;
 esac
+git update --init --recursive
