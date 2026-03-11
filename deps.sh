@@ -22,7 +22,6 @@ case "$OSTYPE" in
         echo "Running on macOS. Downloading Skia release: $skiarelease"
         curl -L -O https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
         unzip $skiarelease -d ~/deps/skia
-        cp -r $HOME/deps/skia/$skiarelease/ ../
         echo "- success"
         echo ":)"
         ;;

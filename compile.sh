@@ -42,7 +42,12 @@ if [ -d "$SKIA_DIR" ]; then
     ninja aseprite
     echo "Congratulations! Aseprite compilation complete."
     echo -e "- success\n:)"
-    echo "Now find the aseprite folder, click on the build folder, and then click on the bin folder. Then drag the app into your system's applications folder."
+    cd bin
+    echo "Moving aseprite..."
+    mv Aseprite.app /Applications/
+    echo "..."
+    sleep 2
+    echo "Moved Aseprite."
 else
     echo "Error: Skia directory not found at $SKIA_DIR"
     exit 1
