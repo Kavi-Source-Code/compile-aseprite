@@ -8,9 +8,9 @@ case "$OSTYPE" in
         skiarelease=Skia-Linux-Release-x64.zip
         echo "Running on Linux. Downloading Skia release: $skiarelease"
         curl -L -O https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
-        unzip ~/Desktop/compile-aseprite/$skiarelease -d ~/deps/skia
+        unzip $skiarelease -d ~/deps/skia
         echo "- success"
-        
+        echo ":)"
         ;;
     "darwin"*)
         read -p "Running on macOS. Do you want to install dependencies using Homebrew? (y/n) " answer
@@ -21,8 +21,10 @@ case "$OSTYPE" in
         skiarelease=Skia-macOS-Release-arm64.zip
         echo "Running on macOS. Downloading Skia release: $skiarelease"
         curl -L -O https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
-        unzip ~/compile-aseprite/$skiarelease -d ~/deps/skia
+        unzip $skiarelease -d ~/deps/skia
+        cp -r $HOME/deps/skia/$skiarelease/ ../
         echo "- success"
+        echo ":)"
         ;;
     "cygwin")
         winget install cmake -e --id Kitware.CMake
@@ -33,9 +35,10 @@ case "$OSTYPE" in
         skiarelease=Skia-Windows-Release-x64.zip
         echo "Running on Cygwin (Windows). Downloading Skia release: $skiarelease"
         wget https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
-        unzip ~/compile-aseprite/$skiarelease -d ~/deps/skia
+        unzip $skiarelease -d ~/deps/skia
         echo "Please ensure you have Visual Studio Build Tools installed and available in your PATH for Aseprite compilation."
         echo "- success"
+        echo ":)"
         ;;
     "msys")
         winget install cmake -e --id Kitware.CMake
@@ -46,16 +49,18 @@ case "$OSTYPE" in
         skiarelease=Skia-Windows-Release-x86.zip
         echo "Running on Msys (Windows). Downloading Skia release: $skiarelease"
         wget https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
-        unzip ~/compile-aseprite/$skiarelease -d ~/deps/skia
+        unzip $skiarelease -d ~/deps/skia
         sleep 2
         echo "Please ensure you have Visual Studio Build Tools installed and available in your PATH for Aseprite compilation."
         echo "- success"
+        echo ":)"
         ;;
     "freebsd"*)
         sleep 2
         echo "Running on FreeBSD"
         echo "No Skia release available for FreeBSD. Please build Skia from source and place it in ~/deps/skia."
         echo "- failed"
+        echo ":("
         exit 1
         ;;
 esac
