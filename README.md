@@ -4,4 +4,5 @@ Template to compile Aseprite. If you don't know what this is, then I encourage y
 _____________________________________
 * To run simply type in your terminal:
 
-./main.sh
+cd ~/Desktop/compile-aseprite (or compile-aseprite-main, if working with a .zip file) then type ./main.sh
+Then follow the prompts.
