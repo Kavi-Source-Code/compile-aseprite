@@ -1,6 +1,10 @@
 #!/bin/bash
 echo "Starting Aseprite compilation process..."
-curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+if [ ! command -v brew >/dev/null 2>&1 ]; then
+    echo "No need for homebrew installation!"
+else
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 echo "Homebrew installation completed."
 sleep 2
 echo "Setting up Homebrew environment..."

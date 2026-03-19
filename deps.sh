@@ -4,7 +4,7 @@ sleep 1
 mkdir -p ~/deps/skia
 case "$OSTYPE" in
     "linux-gnu"*)
-        brew install cmake ninja-build pkg-config ninja g++ gcc clang clang++
+        brew install g++ gcc clang clang++
         skiarelease=Skia-Linux-Release-x64.zip
         echo "Running on Linux. Downloading Skia release: $skiarelease"
         curl -L -O https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
@@ -17,7 +17,7 @@ case "$OSTYPE" in
         if [[ "$answer" != "y" ]]; then
             xcode-select --install
         fi
-        brew install cmake ninja-build pkg-config ninja g++ gcc clang clang++
+        brew install g++ gcc clang clang++
         skiarelease=Skia-macOS-Release-arm64.zip
         echo "Running on macOS. Downloading Skia release: $skiarelease"
         curl -L -O https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease

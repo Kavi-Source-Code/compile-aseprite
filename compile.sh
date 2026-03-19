@@ -25,9 +25,6 @@ if [ -d "$SKIA_DIR" ]; then
     cmake .. \
       -G Ninja \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
-      -DCMAKE_OSX_ARCHITECTURES=arm64 \
-      -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
-      -DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk \
       -DLAF_BACKEND=skia \
       -DSKIA_DIR="$SKIA_DIR" \
       -DSKIA_LIBRARY_DIR="$SKIA_DIR/out/Release-arm64" \
