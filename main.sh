@@ -1,8 +1,4 @@
 #!/bin/bash
-#if [ ! . == "$HOME/Desktop/compile-aseprite" ]; then
-    #echo "Changing directory to Desktop..."
-    #cd ~/Desktop
-#fi
 
 echo "Adding run permissions..."
 sleep 0.5
