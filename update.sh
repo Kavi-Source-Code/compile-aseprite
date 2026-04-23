@@ -7,6 +7,7 @@ echo "Welcome to the Aseprite updating script!"
 echo -e "\n For nontechnical (casual) users."
 sleep 0.5
 
+REL=Release-$(uname -m)
 SKIA_DIR="$HOME/deps/skia"
 
 echo "Verifying skia dir..."
@@ -29,9 +30,9 @@ if [ -d "$SKIA_DIR" ]; then
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DLAF_BACKEND=skia \
       -DSKIA_DIR="$SKIA_DIR" \
-      -DSKIA_LIBRARY_DIR="$SKIA_DIR/out/Release-arm64" \
-      -DSKIA_LIBRARY="$SKIA_DIR/out/Release-arm64/libskia.a" \
-      -DWEBP_LIBRARIES="$SKIA_DIR/out/Release-arm64/libwebp.a" \
+      -DSKIA_LIBRARY_DIR="$SKIA_DIR/out/$REL" \
+      -DSKIA_LIBRARY="$SKIA_DIR/out/$REL/libskia.a" \
+      -DWEBP_LIBRARIES="$SKIA_DIR/out/$REL/libwebp.a" \
       -DPNG_ARM_NEON:STRING=on
 
     echo "Building..."
