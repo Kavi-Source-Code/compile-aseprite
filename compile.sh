@@ -41,7 +41,7 @@ if [ -d "$SKIA_DIR" ]; then
     echo -e "- success\n:)"
     cd bin
     echo "Moving aseprite..."
-    mv Aseprite.app /Applications/
+    mv Aseprite.app ~/Applications/
     echo "..."
     sleep 2
     echo "Moved Aseprite."
