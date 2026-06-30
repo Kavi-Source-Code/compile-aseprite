@@ -33,7 +33,7 @@ case "$OSTYPE" in
         winget install visualstudio2022buildtools -e --id Microsoft.VisualStudio.2022.BuildTools
         skiarelease=Skia-Windows-Release-x64.zip
         echo "Running on Cygwin (Windows). Downloading Skia release: $skiarelease"
-        wget https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
+        curl -L -O https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
         unzip $skiarelease -d ~/deps/skia
         echo "Please ensure you have Visual Studio Build Tools installed and available in your PATH for Aseprite compilation."
         echo "- success"
@@ -47,7 +47,7 @@ case "$OSTYPE" in
         winget install visualstudio2022buildtools -e --id Microsoft.VisualStudio.2022.BuildTools
         skiarelease=Skia-Windows-Release-x86.zip
         echo "Running on Msys (Windows). Downloading Skia release: $skiarelease"
-        wget https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
+        curl -L -O https://github.com/aseprite/skia/releases/download/m124-08a5439a6b/$skiarelease
         unzip $skiarelease -d ~/deps/skia
         sleep 2
         echo "Please ensure you have Visual Studio Build Tools installed and available in your PATH for Aseprite compilation."

@@ -23,6 +23,17 @@ else
 fi
 echo "Updating Homebrew..."
 brew update
-echo "Installing Aseprite dependencies..."
-brew install cmake ninja pkg-config
+echo "Installing compilation tools..."
+if ! command -v cmake >/dev/null 2>&1; then
+    brew install cmake
+fi
+
+if ! command -v ninja >/dev/null 2>&1; then
+    brew install ninja
+fi
+
+if ! command -v pkg-config >/dev/null 2>&1; then
+    brew install pkg-config
+fi
+
 echo "Dependencies installation completed."
